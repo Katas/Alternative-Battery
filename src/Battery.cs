@@ -52,7 +52,7 @@ public class Battery  {
 		this.ColorNormalCharge		= Color.White;
 		this.ColorPowerSaveCharge 	= Color.Green;
 		this.ColorLowCharge			= Color.Yellow;
-		this.ColorCriticalCharge  	= Color.Red;
+		this.ColorCriticalCharge	= Color.Red;
 		
 		this.BatteryColors = new Color[] { this.ColorBackground, this.ColorOutline };
 	
@@ -128,7 +128,7 @@ public class Battery  {
 	
 	public static ManagementObject GetWmiBattery() {
 		var enumerator = mos.Get().GetEnumerator();
-		if(!enumerator.MoveNext()) throw new System.Exception("No battery found");
+		if(!enumerator.MoveNext()) throw new Exception("No battery found");
 		return (ManagementObject) enumerator.Current;
 	}
 }
