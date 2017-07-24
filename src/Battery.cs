@@ -24,16 +24,16 @@ public class Battery  {
 		{ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
 	};
 	
-	public static readonly int CHARGE_START_X = 2;
-	public static readonly int CHARGE_START_Y = 5;
+	public static readonly int CHARGE_START_X 	= 2;
+	public static readonly int CHARGE_START_Y 	= 5;
 	public static readonly int CHARGE_END_X 	= 12;
 	public static readonly int CHARGE_END_Y 	= 10;
 	
-	public Color ColorOutline			    { get; set; }
-	public Color ColorBackground		  { get; set; }
+	public Color ColorOutline			{ get; set; }
+	public Color ColorBackground		{ get; set; }
 	public Color ColorNormalCharge		{ get; set; }
 	public Color ColorPowerSaveCharge	{ get; set; }
-	public Color ColorLowCharge			  { get; set; }
+	public Color ColorLowCharge			{ get; set; }
 	public Color ColorCriticalCharge	{ get; set; }
 
 	public Color[] BatteryColors { get; private set; }
@@ -47,12 +47,12 @@ public class Battery  {
 	}
 	
 	public Battery() {
-		this.ColorOutline			    = Color.White;
-		this.ColorBackground		  = Color.Transparent;
+		this.ColorOutline			= Color.White;
+		this.ColorBackground		= Color.Transparent;
 		this.ColorNormalCharge		= Color.White;
-		this.ColorPowerSaveCharge = Color.Green;
-		this.ColorLowCharge			  = Color.Yellow;
-		this.ColorCriticalCharge  = Color.Red;
+		this.ColorPowerSaveCharge 	= Color.Green;
+		this.ColorLowCharge			= Color.Yellow;
+		this.ColorCriticalCharge  	= Color.Red;
 		
 		this.BatteryColors = new Color[] { this.ColorBackground, this.ColorOutline };
 	
@@ -115,11 +115,11 @@ public class Battery  {
 	
 	public Color GetChargeColor(uint status) {
 		switch(status) {
-			case 4: return ColorLowCharge;		  // Low
+			case 4: return ColorLowCharge;		// Low
 			case 5: return ColorCriticalCharge;	// Critical
-			case 6: return ColorNormalCharge;	  // Charging
-			case 7: return ColorNormalCharge;	  // Charging and high
-			case 8: return ColorLowCharge;		  // Charging and low
+			case 6: return ColorNormalCharge;	// Charging
+			case 7: return ColorNormalCharge;	// Charging and high
+			case 8: return ColorLowCharge;		// Charging and low
 			case 9: return ColorCriticalCharge;	// Charging and critical
 		}
 		
